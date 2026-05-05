@@ -11,6 +11,10 @@ body {
   background: #0a0a0a url('../assets/BG.png') center center / cover no-repeat;
 }
 
+@media (max-width: 479px) {
+  body { overflow-x: hidden; overflow-y: auto; }
+}
+
 .scene {
   min-height: 100vh;
   display: flex;
@@ -190,4 +194,56 @@ body {
   border: 1px solid #7CD3FF;
   color: #fff;
   font-weight: 700;
+}
+
+/* ─── Tablet 860px ─── */
+@media (max-width: 860px) {
+  .cards-wrap {
+    transform: scale(0.72);
+    transform-origin: center center;
+    margin: -70px 0;
+  }
+}
+
+/* ─── Mobile 600px ─── */
+@media (max-width: 600px) {
+  .scene {
+    align-items: flex-start;
+    padding: 40px 0 60px;
+  }
+
+  .cards-wrap {
+    transform: none;
+    margin: 0;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .card {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: min(300px, 86vw);
+    height: auto;
+    aspect-ratio: 300 / 440;
+  }
+
+  .card--1,
+  .card--2,
+  .card--3 {
+    transform: none;
+    z-index: 1;
+  }
+
+  .card--1:hover,
+  .card--2:hover,
+  .card--3:hover {
+    transform: translateY(-8px) scale(1.02);
+    z-index: 2;
+  }
 }
